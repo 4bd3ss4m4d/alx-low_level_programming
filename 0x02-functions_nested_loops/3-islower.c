@@ -7,5 +7,5 @@
 int _islower(int c)
 {
 	/* ASCII code of a through z is from 97 to 122 */
-1	return c >= 97 && c <= 122;
+	return (c >= 97 && c <= 122);
 }
