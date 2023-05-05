@@ -2,25 +2,18 @@
 
 /**
  * puts2 - prints every other character of a string,
- * starting with the first character
+ *	   starting with the first character
  * @str: pointer to the string
  * Return: void
  */
-
 void puts2(char *str)
-
 {
-	int i;
+	int i, len = 0;
 
-	for (i = 0; *str != '\0'; i++, str++)
-	{
+	while (str[len] != '\0')
+		len++;
 
-		if (i % 2 == 0)
-		{
-			_putchar(*str);
-		}
-	}
-
+	for (i = 0; i < len; i += 2)
+		_putchar(str[i]);
 	_putchar('\n');
 }
-
