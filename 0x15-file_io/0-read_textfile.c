@@ -1,24 +1,24 @@
-#include <fcntl.h>
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
+/* By Abdelghni Hamanar */
 /**
- * read_textfile - reads a text file and prints it to
- *		   the POSIX standard output.
- * @filename: name of the file to read
- * @letters: the number of letters it should read and print
- *
- * Return: the actual number of letters it could read and print, or 0 on error
+ * read_textfile - Entry point
+ * @filename: pointer to the file name
+ * @letters: size
+ * Return: ssize_t
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	char *buffer = malloc(sizeof(char) * (letters));
-	ssize_t bytes_r, bytes_w;
+	char *buffer;
+	ssize_t bytes_r, bytes_w, fd;
 
-	if (filename == NULL || buffer == NULL)
+	if (filename == NULL)
+		return (0);
+
+	buffer = malloc(sizeof(char) * letters);
+
+	if (buffer == NULL)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
@@ -28,7 +28,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1 || bytes_r == -1 || bytes_w == -1 || bytes_w != bytes_r)
 	{
 		free(buffer);
-		close(fd);
 		return (0);
 	}
 

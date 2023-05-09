@@ -9,21 +9,21 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, bytes_wtirren, text_len = 0;
+	int fd, bytes_w, str_len = 0;
 
 	if (filename == NULL)
 		return (-1);
 
 	if (text_content != NULL)
 	{
-		for (text_len = 0; text_content[text_len]; text_len++)
+		for (str_len = 0; text_content[str_len]; str_len++)
 			;
 	}
 
 	fd = open(filename, O_WRONLY | O_APPEND);
-	bytes_wtirren = write(fd, text_content, text_len);
+	bytes_w = write(fd, text_content, str_len);
 
-	if (fd == -1 || bytes_wtirren == -1)
+	if (fd == -1 || bytes_w == -1)
 		return (-1);
 
 	close(fd);
