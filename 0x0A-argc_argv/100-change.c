@@ -3,14 +3,12 @@
 
 /**
  * main - prints the minimum number of coins
- * to make change for an amount of money
- *
+ *	  to make change for an amount of money
  * @argc: The number of command-line arguments provided
  * @argv: An array of pointers to the command-line arguments
  *
  * Return: Always 0
  */
-
 int main(int argc, char *argv[])
 {
 	int coins[] = {25, 10, 5, 2, 1};
