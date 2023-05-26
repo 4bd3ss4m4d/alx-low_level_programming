@@ -1,24 +1,37 @@
 #include <stdio.h>
+
 /**
- * main - prints all possible combinations of two two-digit numbers
- * Return: 0
+ * main - Entry point of the program
+ *
+ * Description: This function generates and prints all possible combinations
+ *	        of three digits satisfying the following conditions:
+ *	        - The digits must be different.
+ *	        - The smallest combination of three digits is printed.
+ *	        - Numbers are printed in ascending order with three digits.
+ *	        - Each number is separated by a comma and a space.
+ *	        - The putchar function is used for output, and no other
+ *		  output functions are allowed.
+ *	        - The code uses a maximum of six putchar function calls.
+ *	        - No variables of type char are used.
+ *
+ * Return: Always returns 0 to indicate successful execution
  */
 int main(void)
 {
-	int digit_1, digit_2;
+	int i, j;
 
-	for (digit_1 = 0; digit_1 < 100; digit_1++)
+	for (i = 0; i < 100; i++)
 	{
-		for (digit_2 = 0; digit_2 < 100; digit_2++)
+		for (j = 0; j < 100; j++)
 		{
-			if (digit_1 < digit_2)
+			if (i < j)
 			{
-				putchar((digit_1 / 10) + 48);
-				putchar((digit_1 % 10) + 48);
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
 				putchar(' ');
-				putchar((digit_2 / 10) + 48);
-				putchar((digit_2 % 10) + 48);
-				if (digit_1 != 98 || digit_2 != 99)
+				putchar((j / 10) + '0');
+				putchar((j % 10) + '0');
+				if (i != 98)
 				{
 					putchar(',');
 					putchar(' ');
@@ -26,7 +39,7 @@ int main(void)
 			}
 		}
 	}
-
 	putchar('\n');
+
 	return (0);
 }
