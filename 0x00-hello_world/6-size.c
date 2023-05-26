@@ -3,6 +3,9 @@
 /**
  * main - Entry point of the program
  *
+ * Description: This program prints the size of various types on the computer
+ *	        it is compiled and run on.
+ *
  * Return: Always returns 0 to indicate successful execution
  */
 int main(void)
