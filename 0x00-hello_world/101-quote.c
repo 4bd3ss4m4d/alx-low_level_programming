@@ -1,17 +1,15 @@
 #include <stdio.h>
+#include <unistd.h>
+
 /**
- * main - Prints "and that piece of art is useful..."
- * Return: 1
+ * main - Entry point of the program
+ *
+ * Return: Always returns 1 to indicate execution
  */
 int main(void)
 {
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	int i = 0;
+	write(2,
+	"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 
-	while (str[i] != '\0')
-	{
-		putchar(str[i]);
-		i++;
-	}
 	return (1);
 }
