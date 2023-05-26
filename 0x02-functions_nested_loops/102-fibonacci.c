@@ -1,10 +1,15 @@
-#include <stdio.h>
 #include "main.h"
-/**
- * main - Prints the first 50 Fibonacci numbers
- * Return: Always 0 on Success
-*/
+#include <stdio.h>
 
+/**
+ * main - Entry point of the program
+ *
+ * Description: This program prints the first 50 Fibonacci numbers, starting
+ *	        with 1 and 2, separated by comma and space, followed by a new line.
+ *	        It utilizes the Fibonacci sequence to generate the numbers.
+ *
+ * Return: Always returns 0 to indicate successful execution
+ */
 int main(void)
 {
 	int count;
