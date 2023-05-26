@@ -1,28 +1,17 @@
 #include <stdio.h>
+
 /**
- * main - Prints the Alphabet in lower and upper letters.
- * Return: 0
+ * main - Entry point of the program
+ *
+ * Return: Always returns 0 to indicate successful execution
  */
 int main(void)
 {
-	char letter;
+	char c;
 
-	letter = 'a';
-
-	while (letter <= 'z')
-	{
-		putchar(letter);
-		letter++;
-	}
-
-	letter = 'A';
-
-	while (letter <= 'Z')
-	{
-		putchar(letter);
-		letter++;
-	}
-
+	for (c = 'a'; c <= 'z'; c++)
+		putchar(c);
 	putchar('\n');
+
 	return (0);
 }
