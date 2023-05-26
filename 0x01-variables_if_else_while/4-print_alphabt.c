@@ -1,23 +1,20 @@
 #include <stdio.h>
+
 /**
- * main - Prints all letters of the alphabet except e and q
- * Return: 0
+ * main - Entry point of the program
+ *
+ * Return: Always returns 0 to indicate successful execution
  */
 int main(void)
 {
-	char letter;
+	char c;
 
-	letter = 'a';
-
-	while (letter <= 'z')
+	for (c = 'a'; c <= 'z'; c++)
 	{
-		if (letter != 'q' && letter != 'e')
-		{
-			putchar(letter);
-		}
-		letter++;
+		if (c != 'q' && c != 'e')
+			putchar(c);
 	}
-
 	putchar('\n');
+
 	return (0);
 }
