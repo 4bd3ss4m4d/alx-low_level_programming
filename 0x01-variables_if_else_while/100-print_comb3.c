@@ -3,7 +3,7 @@
 /**
  * main - Entry point of the program
  *
- * Description: This function generates and prints all possible combinations
+ * Description: This program generates and prints all possible combinations
  *	        of two digits satisfying the following conditions:
  *	        - The digits must be different.
  *	        - The smallest combination of two digits is printed.
