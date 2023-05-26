@@ -1,22 +1,19 @@
 #include <stdio.h>
+
 /**
- * main - Prints all the numbers of base 16 in lowercase
- * Return: 0
+ * main - Entry point of the program
+ *
+ * Return: Always returns 0 to indicate successful execution
  */
 int main(void)
 {
-	char hex_digit;
+	char x;
 
-	for (hex_digit = '0'; hex_digit <= '9'; hex_digit++)
-	{
-		putchar(hex_digit);
-	}
-
-	for (hex_digit = 'a'; hex_digit <= 'f'; hex_digit++)
-	{
-		putchar(hex_digit);
-	}
-
+	for (x = '0'; x <= '9'; x++)
+		putchar(x);
+	for (x = 'a'; x <= 'f'; x++)
+		putchar(x);
 	putchar('\n');
+
 	return (0);
 }
