@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _strspn - gets the length of a prefix substring
@@ -6,7 +7,7 @@
  * @accept: string containing the characters to be matched
  *
  * Return: the number of bytes in the initial segment of s
- *	   that consist only of bytes from accept
+ *	 that consist only of bytes from accept
  */
 unsigned int _strspn(char *s, char *accept)
 {
@@ -20,5 +21,6 @@ unsigned int _strspn(char *s, char *accept)
 		if (!accept[j])
 			break;
 	}
+
 	return (i);
 }
