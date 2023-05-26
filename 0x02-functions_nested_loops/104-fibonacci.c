@@ -1,46 +1,49 @@
 #include <stdio.h>
-#include "main.h"
+
 /**
- * main - Prints the first 98 Fibonacci numbers, starting with 1 and 2
- * Return: 0 on Success
+ * main - Entry point of the program
+ *
+ * Description: This program finds and prints the first 98 Fibonacci numbers
+ *              starting with 1 and 2.
+ *
+ * Return: Always returns 0 to indicate successful execution
  */
 int main(void)
 {
-	int count;
-	unsigned long i, j, k;
-	unsigned long m, n, p, carry;
+	int i;
+	unsigned long curr_fib = 0, next_fib = 1, sum;
+	unsigned long curr_fib_half1, curr_fib_half2, next_fib_half1, next_fib_half2;
+	unsigned long half1, half2;
 
-	count = 0;
-	i = 0;
-	j = 1;
-	for (count = 1; count <= 91; count++)
+	for (i = 0; i < 92; i++)
 	{
-		k = i + j;
-		i = j;
-		j = k;
-		printf("%lu, ", k);
+		sum = curr_fib + next_fib;
+		printf("%lu, ", sum);
+		curr_fib = next_fib;
+		next_fib = sum;
 	}
-	m = i % 1000;
-	i = i / 1000;
-	n = j % 1000;
-	j = j / 1000;
-	while (count <= 98)
+	curr_fib_half1 = curr_fib / 10000000000;
+	next_fib_half1 = next_fib / 10000000000;
+	curr_fib_half2 = curr_fib % 10000000000;
+	next_fib_half2 = next_fib % 10000000000;
+	for (i = 93; i < 99; i++)
 	{
-		carry = (m + n) / 1000;
-		p = (m + n) - carry * 1000;
-		k = (i + j) + carry;
-		m = n;
-		n = p;
-		i = j;
-		j = k;
-		if (p >= 100)
-			printf("%lu%lu", k, p);
-		else
-			printf("%lu0%lu", k, p);
-		if (count != 98)
+		half1 = curr_fib_half1 + next_fib_half1;
+		half2 = curr_fib_half2 + next_fib_half2;
+		if (curr_fib_half2 + next_fib_half2 > 9999999999)
+		{
+			half1 += 1;
+			half2 %= 10000000000;
+		}
+		printf("%lu%lu", half1, half2);
+		if (i != 98)
 			printf(", ");
-		count++;
+		curr_fib_half1 = next_fib_half1;
+		curr_fib_half2 = next_fib_half2;
+		next_fib_half1 = half1;
+		next_fib_half2 = half2;
 	}
-	putchar('\n');
+	printf("\n");
+
 	return (0);
 }
