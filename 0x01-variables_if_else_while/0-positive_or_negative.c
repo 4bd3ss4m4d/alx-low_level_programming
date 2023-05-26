@@ -5,9 +5,11 @@
 /**
  * main - Entry point of the program
  *
+ * Description: This program generates a random number and determines
+ *	        whether it is positive, negative, or zero.
+ *
  * Return: Always returns 0 to indicate successful execution
  */
-
 int main(void)
 {
 	int n;
