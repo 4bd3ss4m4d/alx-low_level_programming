@@ -2,13 +2,11 @@
 
 /**
  * _strstr - locates a substring
- *
  * @haystack: pointer to the string to search
  * @needle: pointer to the substring to find
  *
- * Return: ointer to the beginning of the located substring
+ * Return: pointer to the beginning of the located substring
  */
-
 char *_strstr(char *haystack, char *needle)
 {
 	int i, j;
@@ -27,4 +25,3 @@ char *_strstr(char *haystack, char *needle)
 
 	return (0);
 }
-
