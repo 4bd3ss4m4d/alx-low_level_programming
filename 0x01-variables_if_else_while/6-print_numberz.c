@@ -1,18 +1,17 @@
 #include <stdio.h>
+
 /**
- * main - Prints all single digit numbers of base 10
- * Return: 0
+ * main - Entry point of the program
+ *
+ * Return: Always returns 0 to indicate successful execution
  */
 int main(void)
 {
-	int digit;
+	int d;
 
-	/* 0 in ASCII code is 48 and 9 is 57 */
-	for (digit = 48; digit < 58; digit++)
-	{
-		putchar(digit);
-	}
-
+	for (d = '0'; d <= '9'; d++)
+		putchar(d);
 	putchar('\n');
+
 	return (0);
 }
