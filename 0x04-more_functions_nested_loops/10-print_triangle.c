@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_triangle - prints a triangle
- * @size: size of the triangle
+ * print_triangle - Prints a triangle of a given size using the '#' character.
+ * @size: The size of the triangle.
+ *
  * Return: void
  */
-
 void print_triangle(int size)
 {
 	if (size <= 0)
@@ -22,12 +22,10 @@ void print_triangle(int size)
 			{
 				_putchar(' ');
 			}
-
 			for (j = 1; j <= i; j++)
 			{
 				_putchar('#');
 			}
-
 			_putchar('\n');
 		}
 	}
