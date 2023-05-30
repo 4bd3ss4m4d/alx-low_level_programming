@@ -2,13 +2,15 @@
 #include "main.h"
 
 /**
- * main -  prints the numbers from 1 to 100, followed by a new line.
- * But for multiples of three print Fizz instead of the number and
- * for the multiples of five print Buzz. For numbers which are multiples
- * of both three and five print FizzBuzz
- * Return: Always 0 (success)
+ * main - Entry point of the FizzBuzz program
+ *
+ * Description: This program prints the numbers from 1 to 100, replacing
+ *	      multiples of three with "Fizz", multiples of five with "Buzz",
+ *	      and multiples of both three and five with "FizzBuzz". Each
+ *	      number or word is separated by a space.
+ *
+ * Return: Always returns 0 to indicate successful execution
  */
-
 int main(void)
 {
 	int i;
@@ -37,9 +39,7 @@ int main(void)
 			printf(" ");
 		}
 	}
-
 	printf("\n");
 
 	return (0);
 }
-
