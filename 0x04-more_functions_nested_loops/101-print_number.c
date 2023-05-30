@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_number - prints an integer
- * @n: an integer
+ * print_number - Prints an integer using _putchar function
+ * @n: The integer to be printed
+ *
  * Return: void
  */
-
 void print_number(int n)
 {
 
@@ -16,7 +16,6 @@ void print_number(int n)
 		num = -n;
 		_putchar('-');
 	}
-
 	else
 	{
 		num = n;
