@@ -1,24 +1,20 @@
 #include "main.h"
 
 /**
- * factorial - the factorial of a given number
+ * factorial - Calculates the factorial of a given number
+ * @n: The number for which the factorial is to be calculated
  *
- * @n: the number to compute the factorial of
- *
- * Return: length of the string
+ * Return: The factorial of n, or -1 if n is less than 0.
  */
-
 int factorial(int n)
 {
 	if (n < 0)
 	{
 		return (-1);
 	}
-
-	if (n == 0)
+	if (n == 1)
 	{
 		return (1);
 	}
-
 	return (n * factorial(n - 1));
 }
