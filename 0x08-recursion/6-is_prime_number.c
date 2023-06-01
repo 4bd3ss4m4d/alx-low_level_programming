@@ -3,45 +3,31 @@
 int is_prime_helper(int n, int divisor);
 
 /**
- * is_prime_number - checks if number has divisors
+ * is_prime_number - Checks if an integer is a prime number
+ * @n: The number to be checked
  *
- * @n: an integer
- *
- * Return:  1 if @n is an integer is a prime number, otherwise  0
+ * Return: 1 if n is prime, 0 otherwise.
  */
-
 int is_prime_number(int n)
 {
-	if ((!(n % 2) && n != 2) || n < 2)
-	{
+	if (n <= 1)
 		return (0);
-	}
-	else
-	{
-		return (is_prime_helper(n, 3));
-	}
+	return (is_prime_helper(n, 2));
 }
 
 /**
- * is_prime_helper - checks if a number is prime by checking its divisors
- * @n: an integer
- * @divisor: an integer that represents the current divisor to be checked
+ * is_prime_helper - Checks if a number is prime by recursively checking its
+ *		     divisors
+ * @n: The number to be checked
+ * @i: The current divisor to be checked
  *
- * Return: 0 if the number is not prime, 1 if it is
+ * Return: 0 if the number is not prime, 1 if it is prime
  */
-
-int is_prime_helper(int n, int divisor)
+int is_prime_helper(int n, int i)
 {
-	if (divisor == 1)
-	{
-		return (1);
-	}
-	else if (n % divisor == 0)
-	{
+	if (n % i == 0)
 		return (0);
-	}
-	else
-	{
-		return (is_prime_helper(n, divisor - 1));
-	}
+	if (i * i > n)
+		return (1);
+	return (is_prime_helper(n, i + 1));
 }
