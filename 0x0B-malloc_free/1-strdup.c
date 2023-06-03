@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
- * _strdup -  creates a duplicate of a string in a new memory block
+ * _strdup - returns a pointer to a newly allocated space in memory
+ *	     containing a copy of the string given as a parameter.
+ * @str: pointer to the input string
  *
- * @str: pointer to the string to be duplicated
- *
- * Return: a pointer to the duplicated string, or NULL if it fails
+ * Return: pointer to the duplicated string, or NULL if str is NULL or
+ *	 if insufficient memory was available.
  */
-
 char *_strdup(char *str)
 {
 	char *dup;
@@ -19,13 +19,12 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (size = 0; str[size] != '\0'; size++)
+	while (str[size] != '\0')
 	{
-		;
+		size++;
 	}
 
 	dup = malloc(sizeof(char) * (size + 1));
-
 	if (dup == NULL)
 	{
 		return (NULL);
