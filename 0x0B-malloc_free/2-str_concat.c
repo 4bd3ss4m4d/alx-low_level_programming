@@ -2,20 +2,17 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings
- *
+ * str_concat - concatenates two strings.
  * @s1: pointer to the first input string
  * @s2: pointer to the second input string
  *
- * Return: pointer to a newly allocated space in memory
- * containing the concatenated string, or NULL if it fails.
+ * Return: pointer to a newly allocated space in memory containing
+ *	   the concatenated string, or NULL if it fails.
  */
-
 char *str_concat(char *s1, char *s2)
 {
-	int len_s1, len_s2;
+	int len_s1 = 0, len_s2 = 0, i, j;
 	char *conc;
-	int i, j;
 
 	if (s1 == NULL)
 	{
@@ -26,13 +23,13 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 	}
 
-	for (len_s1 = 0; s1[len_s1] != '\0'; len_s1++)
+	while (s1[len_s1] != '\0')
 	{
-		;
+		len_s1++;
 	}
-	for (len_s2 = 0; s2[len_s2] != '\0'; len_s2++)
+	while (s2[len_s2] != '\0')
 	{
-		;
+		len_s2++;
 	}
 
 	conc = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
