@@ -2,23 +2,21 @@
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of a program
+ * argstostr - concatenates all the arguments of the program.
+ * @ac: number of arguments
+ * @av: array of argument strings
  *
- * @ac: the number of arguments
- * @av: an array of strings containing the arguments
- *
- * Return: pointer to a newly allocated string containing the concatenated
- * arguments
+ * Return: pointer to the concatenated string, or NULL if it fails
  */
-
 char *argstostr(int ac, char **av)
 {
-	int i, j, k;
-	int size;
-	char *conc;
+	int i, j, k = 0, size;
+	char *conc_ptr;
 
 	if (ac == 0 || av == NULL)
+	{
 		return (NULL);
+	}
 
 	for (i = 0, size = 0; i < ac; i++)
 	{
@@ -29,23 +27,21 @@ char *argstostr(int ac, char **av)
 		size++; /* taking into consideration '\n' */
 	}
 
-	conc = malloc(sizeof(char) * (size + 1));
-
-	if (conc == NULL)
+	conc_ptr = malloc(sizeof(char) * (size + 1));
+	if (conc_ptr == NULL)
+	{
 		return (NULL);
+	}
 
-	k = 0;
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			conc[k] = av[i][j];
-			k++;
+			conc_ptr[k++] = av[i][j];
 		}
-		conc[k] = '\n';
-		k++;
+		conc_ptr[k++] = '\n';
 	}
-	conc[k] = '\0';
+	conc_ptr[k] = '\0';
 
-	return (conc);
+	return (conc_ptr);
 }
