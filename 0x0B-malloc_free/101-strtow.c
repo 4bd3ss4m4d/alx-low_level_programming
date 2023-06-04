@@ -1,21 +1,22 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
-int count_words(char *s);
+int count_words(char *str);
 
 /**
- * strtow - splits a string into words
+ * strtow - Splits a string into words.
+ * @str: Pointer to the input string to be split.
  *
- * @str: the input string to split
- *
- * Return: pointer to an array of strings (words)
- * or NULL if it fails
+ * Return: Pointer to an array of strings (words), or NULL if str is NULL or
+ *	 empty, or if the function fails to allocate memory.
+ *	 Each element of the array contains a single word, null-terminated.
+ *	 The last element of the array is NULL.
  */
-
 char **strtow(char *str)
 {
-	char **matrix, *tmp;
-	int i, k = 0, len = 0, words, c = 0, start, end;
+	char **rows, *tmp;
+	int i, j = 0, len = 0, words, c = 0, start, end;
 
 	while (*(str + len))
 		len++;
@@ -23,8 +24,8 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	matrix = (char **)malloc(sizeof(char *) * (words + 1));
-	if (matrix == NULL)
+	rows = (char **)malloc(sizeof(char *) * (words + 1));
+	if (rows == NULL)
 		return (NULL);
 
 	for (i = 0; i <= len; i++)
@@ -40,8 +41,8 @@ char **strtow(char *str)
 				while (start < end)
 					*tmp++ = str[start++];
 				*tmp = '\0';
-				matrix[k] = tmp - c;
-				k++;
+				rows[j] = tmp - c;
+				j++;
 				c = 0;
 			}
 		}
@@ -49,39 +50,28 @@ char **strtow(char *str)
 			start = i;
 	}
 
-	matrix[k] = NULL;
+	rows[j] = NULL;
 
-	return (matrix);
+	return (rows);
 }
 
 /**
- * count_words - counts the number of words in a string
- *
- * @s: the input string
+ * count_words - Counts the number of words in a string
+ * @str: Pointer to the input string
  *
  * Return: The number of words in the string
  */
-
-int count_words(char *s)
+int count_words(char *str)
 {
-	int i;
-	int slen, n_words;
+	int i, count = 0;
 
-	slen = 0;
-	n_words = 0;
-
-	while (s[slen] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		slen++;
-	}
-
-	for (i = 0; i < slen; i++)
-	{
-		if (s[i] != ' ' && (i == 0 || s[i - 1] == ' '))
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-			n_words++;
+			count++;
 		}
 	}
 
-	return (n_words);
+	return (count);
 }
