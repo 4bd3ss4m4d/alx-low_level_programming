@@ -2,36 +2,26 @@
 
 /**
  * get_dnodeint_at_index - returns the nth node of a dlistint_t linked list
- * @head: head of the list
- * @index: index of the nth node
+ * @head: pointer to the head of the list
+ * @index: index of the node, starting from 0
  *
- * Return: nth node
+ * Return: the address of the nth node, or NULL if the node does not exist
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int i;
+	dlistint_t *current = head;
+	unsigned int count = 0;
 
-	if (head == NULL)
+	while (current != NULL)
 	{
-		return (NULL);
-	}
-
-	while (head->prev != NULL)
-	{
-		head = head->prev;
-	}
-
-	i = 0;
-
-	while (head != NULL)
-	{
-		if (i == index)
+		if (count == index)
 		{
-			break;
+			return (current);
 		}
-		head = head->next;
-		i++;
+
+		count++;
+		current = current->next;
 	}
 
-	return (head);
+	return (NULL);
 }
